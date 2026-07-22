@@ -307,9 +307,11 @@ def run():
     # 汇总打印
     print(f"\n{'板块':6s} {'交易':>4s} {'胜率':>6s} {'收益':>7s} {'回撤':>6s} {'超额':>7s} {'持仓':>5s} {'5日准确':>7s} {'7日准确':>7s}")
     for k, v in final_out.items():
+        a5 = f"{v['buy_acc5']}%" if v['buy_acc5'] is not None else "—"
+        a7 = f"{v['buy_acc7']}%" if v['buy_acc7'] is not None else "—"
         print(f"{k:6s} {v['trades']:4d} {v['win_rate']:5.1f}% {v['total_return']:6.1f}% "
               f"{v['max_dd']:5.1f}% {v['excess']:6.1f}% {v['avg_hold']:4.1f}日 "
-              f"{v['buy_acc5'] or '—':>7s} {v['buy_acc7'] or '—':>7s}")
+              f"{a7:>8s}")
 
     print(f"\n总耗时: {time.time()-t0:.0f}s | 最终评分: {best_score:.4f}")
     return sectors, final_out, best_params
