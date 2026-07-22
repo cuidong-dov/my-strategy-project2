@@ -1,0 +1,42 @@
+name: 每日小波段策略
+
+on:
+  schedule:
+    # 北京时间每个交易日 17:30（UTC 09:30），周一至周五
+    - cron: '30 9 * * 1-5'
+  # 也支持手动触发
+  workflow_dispatch:
+
+jobs:
+  run-strategy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 拉取最新数据
+        run: python scripts/01_fetch_data.py
+
+      - name: 运行小波段策略引擎
+        run: python scripts/02_swing_engine.py
+
+      - name: 生成 Excel 与 MD 报告
+        run: python scripts/03_build_output.py
+
+      - name: 提交结果到仓库
+        run: |
+          git config user.name "strategy-bot"
+          git config user.email "bot@a-share-sector-eval"
+          # 只提交最终交付物
+          git add output/小波段策略_板块评估.xlsx output/小波段_策略参数.md
+          git diff --staged --quiet || (git commit -m "📊 每日更新 $(date +%Y-%m-%d)" && git push)

@@ -1,0 +1,15 @@
+# 数据文件（每日自动拉取，不提交）
+data/*.csv
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 中间产物（最终输出在 output/ 里）
+output/swing_*_signal.csv
+output/swing_stats.json
+output/swing_params.json
+
+# IDE
+.vscode/
+.idea/
