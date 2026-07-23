@@ -481,7 +481,7 @@ def gen_signals(df, p):
     df["signal"] = sig
     df["buy_score"] = buy_score
 
-    # ---- 评分归一化 ----
+    # ---- 买入评分归一化 ----
     raw_scores = buy_score.dropna()
     if len(raw_scores) > 10:
         rmin, rmax = raw_scores.min(), raw_scores.max()
