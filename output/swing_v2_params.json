@@ -1,0 +1,69 @@
+{
+  "params": {
+    "lt_disp": -0.2,
+    "lt_prob": 43,
+    "buy_panic_l": 55,
+    "buy_risk_l": 67,
+    "buy_mkt": 74,
+    "buy_prob": 40,
+    "buy_risk_g": 48,
+    "sell_chase": 76,
+    "sell_risk": 76,
+    "oversold": 0.45,
+    "stop": 0.04,
+    "trail": 0.025,
+    "space": 3,
+    "tstop": 22,
+    "vol_quality_min": -0.5,
+    "pullback_max": 0.0,
+    "heavy_down_max": 0.5,
+    "shrink_streak": 2
+  },
+  "score": 1.0083,
+  "iter1": {
+    "params": {
+      "lt_disp": -0.2,
+      "lt_prob": 43,
+      "buy_panic_l": 55,
+      "buy_risk_l": 67,
+      "buy_mkt": 74,
+      "buy_prob": 40,
+      "buy_risk_g": 48,
+      "sell_chase": 76,
+      "sell_risk": 76,
+      "oversold": 0.45,
+      "stop": 0.04,
+      "trail": 0.025,
+      "space": 3,
+      "tstop": 22,
+      "vol_quality_min": -0.5,
+      "pullback_max": -0.02,
+      "heavy_down_max": 0.5,
+      "shrink_streak": 2
+    },
+    "score": 0.8294
+  },
+  "iter2": {
+    "params": {
+      "lt_disp": -0.2,
+      "lt_prob": 43,
+      "buy_panic_l": 55,
+      "buy_risk_l": 67,
+      "buy_mkt": 74,
+      "buy_prob": 40,
+      "buy_risk_g": 48,
+      "sell_chase": 76,
+      "sell_risk": 76,
+      "oversold": 0.45,
+      "stop": 0.04,
+      "trail": 0.025,
+      "space": 3,
+      "tstop": 22,
+      "vol_quality_min": -0.5,
+      "pullback_max": 0.0,
+      "heavy_down_max": 0.5,
+      "shrink_streak": 2
+    },
+    "score": 1.0083
+  }
+}
